@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug AI Newsletter",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/agent.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": true,
+            "python": "/Users/benny/Library/Caches/pypoetry/virtualenvs/ai-newsletter-nXZS7WQQ-py3.13/bin/python"
+        },
+        {
+            "name": "Debug with Poetry",
+            "type": "python",
+            "request": "launch",
+            "module": "src.agent",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": true,
+            "python": "/Users/benny/Library/Caches/pypoetry/virtualenvs/ai-newsletter-nXZS7WQQ-py3.13/bin/python"
+        },
+        {
+            "name": "Debug Search Tool",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/search_tool.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": true,
+            "python": "/Users/benny/Library/Caches/pypoetry/virtualenvs/ai-newsletter-nXZS7WQQ-py3.13/bin/python"
+        }
+    ]
+}
