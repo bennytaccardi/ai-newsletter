@@ -26,7 +26,7 @@ class PaperCollection:
     def __init__(self):
         ollama_ef = OllamaEmbeddingFunction(
             url="http://localhost:11434",
-            model_name="deepseek-r1",
+            model_name="nomic-embed-text",
         )
         self.collection = chroma_client.get_or_create_collection(
             name=self.COLLECTION_NAME,
@@ -34,7 +34,7 @@ class PaperCollection:
             configuration= CreateCollectionConfiguration(hnsw=CreateHNSWConfiguration(space="cosine"))
         )
 
-    def add(self, documents: list[Paper]) -> None:
+    def add(self, documents: list[Any]) -> None:
         self.collection.add(
             documents=[document.text for document in documents],
             ids=[document.id for document in documents],
@@ -43,3 +43,10 @@ class PaperCollection:
     
     def query(self, query_texts: list[str], n_results: int) -> Any:
         return self.collection.query(query_texts=query_texts, n_results=n_results)
+    
+    def delete_document(self, ids: list[str]) -> Any:
+        return self.collection.delete(ids=ids)
+    
+    @staticmethod
+    def delete_collection() -> Any:
+        return chroma_client.delete_collection("papers")
